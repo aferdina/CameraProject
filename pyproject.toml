@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "cameraproject"
+version = "0.1.0"
+description = ""
+authors = ["Andre Ferdinand <andre_ferdinand@gmx.de>"]
+readme = "README.md"
+
+
+[tool.ruff]
+# Same as Black.
+line-length = 127
+# See https://beta.ruff.rs/docs/rules/
+select = ["E", "F", "B", "UP", "C90", "RUF"]
+# B028: Ignore explicit stacklevel`
+# RUF013: Too many false positives (implicit optional)
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 15
+
+[tool.black]
+line-length = 127
+
+[tool.isort]
+profile = "black"
+line_length = 127
+src_paths = ["cameraproject"]
+
+[tool.poetry.dependencies]
+python = ">=3.10.4,<3.13"
+fastapi = "^0.115.6"
+uvicorn = "^0.34.0"
+picamera2 = "^0.3.23"
+
+
+[tool.poetry.group.dev.dependencies]
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
