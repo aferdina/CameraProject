@@ -12,6 +12,7 @@
     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
     libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev \
     liblzma-dev python-openssl git
+    sudo apt install -y python3-picamera2 --no-install-recommends
     ```
 
 2. **Install `pyenv`**:
@@ -61,3 +62,21 @@
 5. **Add the SSH key to your GitHub account**:
     - Go to GitHub and navigate to **Settings** > **SSH and GPG keys** > **New SSH key**.
     - Paste the copied SSH key into the "Key" field and give it a title.
+
+### Install Poetry on Raspberry Pi
+
+1. **Install Poetry**:
+    ```bash
+    curl -sSL https://install.python-poetry.org | python3 -
+    ```
+
+2. **Add Poetry to your PATH**:
+    ```bash
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+    source ~/.bashrc
+    ```
+
+3. **Verify the installation**:
+    ```bash
+    poetry --version
+    ```
