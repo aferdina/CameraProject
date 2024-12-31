@@ -28,55 +28,70 @@
     ```
 
 4. **Restart your shell**:
+
     ```bash
     exec $SHELL
     ```
 
 5. **Verify the installation**:
+
     ```bash
     pyenv --version
     ```
 
 ### Create SSH key to connect to GitHub on Raspberry Pi
 
-1. **Generate the SSH key**:
+1. **Download git if not done**:
+
+    ```bash
+    sudo apt install git
+    ```
+
+2. **Generate the SSH key**:
+
     ```bash
     ssh-keygen -t ed25519 -C "your_email@example.com"
     ```
 
-2. **Start the SSH agent**:
+3. **Start the SSH agent**:
+
     ```bash
     eval "$(ssh-agent -s)"
     ```
 
-3. **Add the SSH key to the SSH agent**:
+4. **Add the SSH key to the SSH agent**:
+
     ```bash
     ssh-add ~/.ssh/id_ed25519
     ```
 
-4. **Copy the SSH key to your clipboard**:
+5. **Copy the SSH key to your clipboard**:
+
     ```bash
     cat ~/.ssh/id_ed25519.pub
     ```
 
-5. **Add the SSH key to your GitHub account**:
+6. **Add the SSH key to your GitHub account**:
     - Go to GitHub and navigate to **Settings** > **SSH and GPG keys** > **New SSH key**.
     - Paste the copied SSH key into the "Key" field and give it a title.
 
 ### Install Poetry on Raspberry Pi
 
 1. **Install Poetry**:
+
     ```bash
     curl -sSL https://install.python-poetry.org | python3 -
     ```
 
 2. **Add Poetry to your PATH**:
+
     ```bash
     echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
     source ~/.bashrc
     ```
 
 3. **Verify the installation**:
+
     ```bash
     poetry --version
     ```
